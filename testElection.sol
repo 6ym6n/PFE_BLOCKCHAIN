@@ -61,7 +61,6 @@ contract MoroccanElections {
     function endElection() public onlyAdmin {
         require(electionStarted, "Election not started.");
         electionStarted = false;
-        // Logic to calculate seats won will be executed here.
     }
 
 function createDistrict(districtType dsType, string memory districtName, uint seatsToWin) public onlyAdmin {
@@ -102,12 +101,7 @@ function createDistrict(districtType dsType, string memory districtName, uint se
 
     uint numberOfVoters = 0;
 
-    function addVoter(
-    uint _age,
-    string memory _cin,
-    string memory _region,
-    string memory _localDistrict
-) public {
+    function addVoter(uint _age, string memory _cin, string memory _region, string memory _localDistrict) public onlyAdmin {
     require(_age > 18, "Age must be greater than eighteen");
 
         localDistricts[_localDistrict].voters[msg.sender] = Voter(_age, _cin, _region, _localDistrict, false, false);
@@ -121,6 +115,8 @@ function createDistrict(districtType dsType, string memory districtName, uint se
 
 
 function voteLocal(string memory candidateFullName, districtType dsType, string memory localDistrictName) public {
+    require(electionStarted, "Election not started.");
+    require(localDistricts[localDistrictName].voters[msg.sender].age > 18, "You must be over 18");
     require(dsType == districtType.local, "Invalid district type");
     require(localDistricts[localDistrictName].voters[msg.sender].hasVotedLocal == false, "You have already voted in this local district");
 
@@ -130,6 +126,8 @@ function voteLocal(string memory candidateFullName, districtType dsType, string 
 }
 
 function voteRegional(string memory candidateFullName, districtType dsType, string memory regionName) public {
+    require(electionStarted, "Election not started.");
+    require(regionalDistricts[regionName].voters[msg.sender].age > 18, "You must be over 18");
     require(dsType == districtType.regional, "Invalid district type");
     require(regionalDistricts[regionName].voters[msg.sender].hasVotedRegional == false, "You have already voted in this regional district");
 
@@ -139,42 +137,61 @@ function voteRegional(string memory candidateFullName, districtType dsType, stri
 }
 
 
+function winnerCandidateLocal(string memory localDistrictName)public  {
+		require(localDistricts[localDistrictName].dsType == districtType.local, "Le district n'est pas local");
+		 
+		uint seatsToWin = localDistricts[localDistrictName].seatsToWin;
 
+		uint electoralDenominator = localDistricts[localDistrictName].numberOfVoters / seatsToWin;
+        uint maxVotes = 0;
+        
+        do{
+
+        for(uint i = 0; i < localDistricts[localDistrictName].candidatesTable.length; i++) {
+            uint votes = localDistricts[localDistrictName].candidatesTable[i].VoteCount;
+            
+            
+            if(votes > maxVotes) {
+                maxVotes = votes;
+                localDistricts[localDistrictName].candidatesTable[i].seatsWon++;
+                votes -= electoralDenominator;
+            }
+        }
+        
+        localDistricts[localDistrictName].seatsToWin--;
+        
+        }while (localDistricts[localDistrictName].seatsToWin != 0);
+        
+}
+
+
+function winnerCandidateRegional(string memory regionalDistrictName)public  {
+		require(regionalDistricts[regionalDistrictName].dsType == districtType.regional, "Le district n'est pas local");
+		 
+		uint seatsToWin = regionalDistricts[regionalDistrictName].seatsToWin;
+
+		uint electoralDenominator = regionalDistricts[regionalDistrictName].numberOfVoters / seatsToWin;
+        uint maxVotes = 0;
+        
+        do{
+
+        for(uint i = 0; i < regionalDistricts[regionalDistrictName].candidatesTable.length; i++) {
+            uint votes = regionalDistricts[regionalDistrictName].candidatesTable[i].VoteCount;
+            
+            
+            if(votes > maxVotes) {
+                maxVotes = votes;
+                regionalDistricts[regionalDistrictName].candidatesTable[i].seatsWon++;
+                votes -= electoralDenominator;
+            }
+        }
+        
+        regionalDistricts[regionalDistrictName].seatsToWin--;
+        
+        }while (regionalDistricts[regionalDistrictName].seatsToWin != 0);
+        
+}
 
 
 		
 }
-
-    
-// localDistricts[localDistrictName].candidates[fullName].seatsWon;
-
-
-
-
-
-
-//     function winnerCandidate(districtType dsType, string memory districtName) public view onlyAdmin returns (uint, string memory) {
-//     require(dsType == districtType.local || dsType == districtType.regional, "Invalid district type");
-
-//     uint winningCandidateID;
-//     uint maxVotes = 0;
-
-//     if (dsType == districtType.local) {
-//         for (uint i = 0; i < localDistricts[districtName].candidates.length; i++) {
-//             if (localDistricts[districtName].candidates[i].VoteCount > maxVotes) {
-//                 maxVotes = localDistricts[districtName].candidates[i].VoteCount;
-//                 winningCandidateID = i;
-//             }
-//         }
-//     } else if (dsType == districtType.regional) {
-//         for (uint i = 0; i < regionalDistricts[districtName].candidates.length; i++) {
-//             if (regionalDistricts[districtName].candidates[i].VoteCount > maxVotes) {
-//                 maxVotes = regionalDistricts[districtName].candidates[i].VoteCount;
-//                 winningCandidateID = i;
-//             }
-//         }
-//     }
-
-//     return (winningCandidateID, (dsType == districtType.local) ? localDistricts[districtName].candidates[winningCandidateID].fullname : regionalDistricts[districtName].candidates[winningCandidateID].fullname);
-// }
-
