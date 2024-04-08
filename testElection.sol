@@ -138,7 +138,7 @@ function voteRegional(string memory candidateFullName, districtType dsType, stri
 
 
 function winnerCandidateLocal(string memory localDistrictName)public  {
-		require(localDistricts[localDistrictName].dsType == districtType.local, "District type should be local");
+		require(localDistricts[localDistrictName].dsType == districtType.local, "Le district n'est pas local");
 		 
 		uint seatsToWin = localDistricts[localDistrictName].seatsToWin;
 
@@ -166,7 +166,7 @@ function winnerCandidateLocal(string memory localDistrictName)public  {
 
 
 function winnerCandidateRegional(string memory regionalDistrictName)public  {
-		require(regionalDistricts[regionalDistrictName].dsType == districtType.regional, "District type should be regional");
+		require(regionalDistricts[regionalDistrictName].dsType == districtType.regional, "Le district n'est pas local");
 		 
 		uint seatsToWin = regionalDistricts[regionalDistrictName].seatsToWin;
 
