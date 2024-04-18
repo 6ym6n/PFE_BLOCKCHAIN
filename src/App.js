@@ -4,9 +4,9 @@ import './App.css';
 
 
 
-import AdminLogin from './components/AdminLogin/AdminLogin';
+import AdminPage from './Pages/AdminPage/AdminPage';
 import AdminAddCandidate from "./components/adminAddCandidate/AdminAddCandidate";
-import HomePage from './components/HomePage/HomePage';
+import HomePage from './Pages/HomePage/HomePage';
 
 function App() {
   return (
@@ -17,7 +17,8 @@ function App() {
         <Routes>
         <Route exact path='/' element={<div className="background-container"><HomePage /></div>} />
           <Route path='/adminAddCandidate' element={<div><AdminAddCandidate /></div>} />
-          <Route path='/AdminLogin' element={<div><AdminLogin /></div>} />
+          <Route path='/AdminPage' element={<div><AdminPage /></div>} />
+          
 
         </Routes>
       </div>

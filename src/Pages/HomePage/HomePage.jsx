@@ -1,8 +1,7 @@
 import React from "react";
 import './style.css';
 import { Link } from "react-router-dom";
-import Navbar from '../Navbar/Navbar';
-
+import Navbar from '../../components/Navbar/Navbar';
 const HomePage = () => {
   return (
     <header className="site-header clearfix">
