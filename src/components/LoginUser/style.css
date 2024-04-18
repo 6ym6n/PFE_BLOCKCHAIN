@@ -1,0 +1,129 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Login Form Styles */
+  #login-container {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    background: white;
+  }
+  
+  #login-form input,
+  #login-form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  #login-form button {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* Sign Up Form Styles */
+  #signup-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }  
+
+  /* General modal overlay styling */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* High z-index to ensure it's on top of other content */
+  }
+  
+  /* Modal content styling */
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Responsive width */
+    max-width: 500px; /* Maximum width of the modal */
+  }
+  
+  /* Close button styling */
+  .close-button {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+  }
+  
+  .close-button:hover,
+  .close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Input fields styling */
+  input[type="text"],
+  input[type="password"],
+  select {
+    width: 100%; /* Full width */
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  /* Styling for the date of birth and gender sections */
+  .date-of-birth,
+  .gender-selection {
+    margin-bottom: 20px;
+  }
+  
+  /* Submit button styling */
+  #signup-submit {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  #signup-submit:hover {
+    opacity: 0.8;
+  }
+  
+
+  select {
+    width: 32%; /* Adjusted to show three dropdowns inline */
+    padding: 8px;
+    margin-right: 1%; /* Adds a small gap between the dropdowns */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Adjust last select margin to align with the form */
+  .date-of-birth select:last-child {
+    margin-right: 0;
+  }
+  

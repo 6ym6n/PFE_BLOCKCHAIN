@@ -183,7 +183,7 @@ function winnerCandidateRegional(string memory regionalDistrictName)public  {
         do{
 
         for(uint i = 0; i < regionalDistricts[regionalDistrictName].candidatesTable.length; i++) {
-            uint storage votes = regionalDistricts[regionalDistrictName].candidatesTable[i].VoteCount;
+            uint votes = regionalDistricts[regionalDistrictName].candidatesTable[i].VoteCount;
             
             
             if(votes > maxVotes) {
