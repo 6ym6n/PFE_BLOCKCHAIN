@@ -16,6 +16,14 @@ function VerticalNav() {
           <span>District List</span>
         </li>
         <li className="nav-item">
+          <FaList className="nav-icon" />
+          <span>Candidates List</span>
+        </li>
+        <li className="nav-item">
+          <FaList className="nav-icon" />
+          <span>Voters List</span>
+        </li>
+        <li className="nav-item">
           <FaSignOutAlt className="nav-icon" />
           <span>Sign Out</span>
         </li>

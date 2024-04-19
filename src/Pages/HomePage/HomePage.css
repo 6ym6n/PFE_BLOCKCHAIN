@@ -89,3 +89,26 @@ section{ display: flex;  }
 .rightside button:hover{
       background: linear-gradient(57deg,#8cc2ed,#46a5f2 );   
 }
+
+.home-page-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .content-area {
+    flex: 1;
+    /* additional styles for padding or margins can be added here */
+  }
+  
+  .login-form-area {
+    flex: 1;
+    /* adjust as necessary for proper alignment and spacing */
+  }
+
+  @media (max-width: 768px) {
+    .home-page-container {
+      flex-direction: column;
+    }
+  }
+  
+  

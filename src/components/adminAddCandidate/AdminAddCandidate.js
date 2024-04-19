@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './style.css';
+import './AdminAddCandidate.css';
 // Enum definitions to match the smart contract
 const Gender = {
   male: 'male',

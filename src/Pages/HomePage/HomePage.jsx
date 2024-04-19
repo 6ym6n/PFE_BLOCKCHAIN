@@ -1,28 +1,31 @@
 import React from "react";
-import './style.css';
-import { Link } from "react-router-dom";
+import './HomePage.css';
 import Navbar from '../../components/Navbar/Navbar';
+import { Link } from 'react-router-dom';
+
 const HomePage = () => {
   return (
-    <header className="site-header clearfix">
-      <Navbar />
-      <nav>
-        <div className="logo">
-          <h1>E-Vote</h1>
-        </div>
-      </nav>
-      <section>
-        <div className="leftside">
-          <img src="img/home_page.png" alt="Home Page" />
-        </div>
-        <div className="rightside">
-          <h1>VOTE!</h1>
-          <p>LET YOUR VOICE BE HEARD!</p>
-          <a href="/register"><button>USER SIGN-UP/LOGIN</button></a>
-          <Link to="/Login"><button>ADMIN-LOGIN</button></Link>
-        </div>
-      </section>
-    </header>
+    <div className="home-page-container">
+      <div className="content-area"></div>
+      <header className="site-header clearfix">
+        <Navbar/>
+        <nav>
+          <div className="logo">
+            <h1>E-Vote</h1>
+          </div>
+        </nav>
+        <section>
+          <div className="leftside">
+            <img src="img/home_page.png" alt="Home Page" />
+          </div>
+        </section>
+      </header>
+      <div className="rightside">
+        <h1>VOTE!</h1>
+        <p> LET YOUR VOICE BE HEARD! </p>
+        <Link to="LoginUser" ><button>USER SIGN-UP/LOGIN</button></Link>
+      </div>
+    </div>
   );
 };
 
