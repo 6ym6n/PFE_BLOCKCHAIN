@@ -1,56 +1,56 @@
 *{
-    margin: 0; padding:0; box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+  margin: 0; padding:0; box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .site-header {
-    width: 100%;
-    height: 120vh;
-    background: #33b5e5;
-    background: linear-gradient(57deg, #34d8eb ); 
-    clip-path: polygon(0% 0%, 100% 0%, 100% 65%, 0% 100%);
+  width: 100%;
+  height: 120vh;
+  background: #33b5e5;
+  background: linear-gradient(57deg, #34d8eb ); 
+  clip-path: polygon(0% 0%, 100% 0%, 100% 65%, 0% 100%);
 
 }
 
 
 nav{
-    width: 100%; height: 100px;
-    background: linear-gradient(57deg , #34d8eb); 
+  width: 100%; height: 100px;
+  background: linear-gradient(57deg , #34d8eb); 
 
-    display: flex; 
-    color: white;
-    
+  display: flex; 
+  color: white;
+  
 }
 
 .logo{
-    width:50%;
-    height: 50px;
+  width:50%;
+  height: 50px;
 }
 
 .logo h1{
-    line-height: 100px;
-    padding-left: 50px;
-    
+  line-height: 100px;
+  padding-left: 50px;
+  
 }
 
 .menu{
-    width: 50%; height: 100px;
+  width: 50%; height: 100px;
 }
 
 .menu ul{
-    width: 100%;
-    height: 100px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items:  center;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items:  center;
 }
 
 .menu ul li{
-    list-style: none;
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
+  list-style: none;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 section{ display: flex;  }
@@ -59,66 +59,55 @@ section{ display: flex;  }
 
 .leftside img{ padding-left: 50px; width: 800px;  height: 400px; }
 
-
+.rightside{ width:40%; height: 300px; color: white; text-align: center; position: absolute;
+  top: 200px;
+  left: 804px;
+}
 
 .rightside h1{ text-align: center;
-    color: #ffffff;
-    font-size: 50px;
-    font-weight: 900;
-    text-transform: uppercase; } 
+  color: #ffffff;
+  font-size: 50px;
+  font-weight: 900;
+  text-transform: uppercase; } 
 
 .rightside p {  
-    font-size: 1.1rem; padding: 30px 0; }
+  font-size: 1.1rem; padding: 30px 0; }
 
 .rightside button{   font-size: 17px;
-    font-weight: 600;
-    color: black;
-    text-transform: uppercase;
-    background: linear-gradient(57deg,#34d8eb , #b1ebf2); 
-    border-radius: 25px;
-    padding: 20px 35px ;
-    margin: 8px;
+  font-weight: 600;
+  color: black;
+  text-transform: uppercase;
+  background: linear-gradient(57deg,#34d8eb , #b1ebf2); 
+  border-radius: 25px;
+  padding: 20px 35px ;
+  margin: 8px;
 
 }
 
-.rightside{
-    padding-top: 200px; 
-    padding-right: 200px;
-}
+
 
 .rightside button:hover{
-      background: linear-gradient(57deg,#8cc2ed,#46a5f2 );   
+    background: linear-gradient(57deg,#8cc2ed,#46a5f2 );   
 }
 
 .home-page-container {
   display: flex;
-  flex-direction: row;
-  width: 100%; /* Ensure the container fits within the viewport */
-  max-width: 100vw; /* Prevent horizontal overflow */
-  overflow-x: hidden; /* Hide any horizontal overflow */
+  justify-content: space-between;
 }
 
 .content-area {
-  flex: 1 1 0%; /* Allow it to grow and shrink but not base on its original size */
+  flex: 1;
+  /* additional styles for padding or margins can be added here */
 }
 
 .login-form-area {
-  flex: 0 1 300px; /* Start at 300px but allow shrinking */
-  min-width: 300px; /* Ensure it does not get smaller than 300px */
-  overflow-x: auto; /* Allow scrolling within the component if overflow */
+  flex: 1;
+  /* adjust as necessary for proper alignment and spacing */
 }
 
-  
-  @media (max-width: 768px) {
-    .home-page-container {
-      flex-direction: column;
-    }
-    .content-area, .login-form-area {
-      flex: none; /* Disable flex sizing */
-      width: 100%; /* Full width */
-    }
+@media (max-width: 768px) {
+  .home-page-container {
+    flex-direction: column;
   }
-  
-  
-  
-  
+}
+

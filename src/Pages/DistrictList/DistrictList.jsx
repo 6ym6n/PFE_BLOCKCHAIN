@@ -1,13 +1,13 @@
 import React from 'react';
-import '../AdminPage/AdminPage.css';
+import './DistrictList.css';
 import '../../components/VerticalNav/VerticalNav.css';
 import CreateDistrict from '../../components/CreateDistrict/CreateDistrict'; // import your Create District component
 import VerticalNav from '../../components/VerticalNav/VerticalNav';
 const DistrictsPage = () => {
   // Dummy data for districts list
   const districts = [
-    { id: 1, name: 'District 1', description: 'Please make me the winner!' },
-    { id: 2, name: 'District 2', description: 'Vote for change!' },
+    { id: 1, name: 'Local Districts', description: '' },
+    { id: 2, name: 'Regional Districts', description: '' },
     // Add more district data here
   ];
 
@@ -16,18 +16,16 @@ const DistrictsPage = () => {
       <VerticalNav /> {/* Your vertical navigation component */}
       <div className="main-content">
         <header className="page-header">Districts</header>
-        <div className="districts-list">
-          {districts.map((district) => (
-            <div key={district.id} className="district-card">
-              <div className="district-info">
-                <h3>{district.name}</h3>
-                <p>{district.description}</p>
-                {/* Additional district information can go here */}
-              </div>
-              {/* Other elements like voting button can go here */}
-            </div>
-          ))}
-        </div>
+        <div className="district-panels">
+      <div className="local-districts-panel district-panel">
+        <h2>Local Districts</h2>
+        {/* Local districts will be listed here */}
+      </div>
+      <div className="regional-districts-panel district-panel">
+        <h2>Regional Districts</h2>
+        {/* Regional districts will be listed here */}
+      </div>
+    </div>
         <div className="create-district-container">
           <CreateDistrict /> {/* Your existing Create District component */}
         </div>
