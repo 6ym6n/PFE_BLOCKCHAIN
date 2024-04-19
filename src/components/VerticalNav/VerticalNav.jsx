@@ -1,6 +1,7 @@
 import React from 'react';
-import './VerticalNav.css';  // Import the CSS for styling
-import { FaHome, FaList, FaSignOutAlt } from 'react-icons/fa';  // Import icons
+import { Link } from 'react-router-dom'; // Import Link
+import './VerticalNav.css';
+import { FaHome, FaList, FaSignOutAlt } from 'react-icons/fa';
 
 function VerticalNav() {
   return (
@@ -8,22 +9,31 @@ function VerticalNav() {
       <div className="nav-logo">MENU</div>
       <ul className="nav-items">
         <li className="nav-item">
-          <FaHome className="nav-icon" />
-          <span>Dashboard</span>
+          <Link to="/" className="nav-link">
+            <FaHome className="nav-icon" />
+            <span>Dashboard</span>
+          </Link>
         </li>
         <li className="nav-item">
-          <FaList className="nav-icon" />
-          <span>District List</span>
+          <Link to="/DistrictList" className="nav-link"> {/* Update this line */}
+            <FaList className="nav-icon" />
+            <span>District List</span>
+          </Link>
         </li>
         <li className="nav-item">
-          <FaList className="nav-icon" />
-          <span>Candidates List</span>
+          <Link to="/candidates" className="nav-link"> {/* Update this line */}
+            <FaList className="nav-icon" />
+            <span>Candidates List</span>
+          </Link>
         </li>
         <li className="nav-item">
-          <FaList className="nav-icon" />
-          <span>Voters List</span>
+          <Link to="/voters" className="nav-link"> {/* Update this line */}
+            <FaList className="nav-icon" />
+            <span>Voters List</span>
+          </Link>
         </li>
         <li className="nav-item">
+          {/* Implement sign out functionality as needed */}
           <FaSignOutAlt className="nav-icon" />
           <span>Sign Out</span>
         </li>

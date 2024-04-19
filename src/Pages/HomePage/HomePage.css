@@ -59,10 +59,7 @@ section{ display: flex;  }
 
 .leftside img{ padding-left: 50px; width: 800px;  height: 400px; }
 
-.rightside{ width:40%; height: 300px; color: white; text-align: center; position: relative; 
- top: -400px;
- left: 800px;
-}
+
 
 .rightside h1{ text-align: center;
     color: #ffffff;
@@ -84,31 +81,44 @@ section{ display: flex;  }
 
 }
 
-
+.rightside{
+    padding-top: 200px; 
+    padding-right: 200px;
+}
 
 .rightside button:hover{
       background: linear-gradient(57deg,#8cc2ed,#46a5f2 );   
 }
 
 .home-page-container {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .content-area {
-    flex: 1;
-    /* additional styles for padding or margins can be added here */
-  }
-  
-  .login-form-area {
-    flex: 1;
-    /* adjust as necessary for proper alignment and spacing */
-  }
+  display: flex;
+  flex-direction: row;
+  width: 100%; /* Ensure the container fits within the viewport */
+  max-width: 100vw; /* Prevent horizontal overflow */
+  overflow-x: hidden; /* Hide any horizontal overflow */
+}
 
+.content-area {
+  flex: 1 1 0%; /* Allow it to grow and shrink but not base on its original size */
+}
+
+.login-form-area {
+  flex: 0 1 300px; /* Start at 300px but allow shrinking */
+  min-width: 300px; /* Ensure it does not get smaller than 300px */
+  overflow-x: auto; /* Allow scrolling within the component if overflow */
+}
+
+  
   @media (max-width: 768px) {
     .home-page-container {
       flex-direction: column;
     }
+    .content-area, .login-form-area {
+      flex: none; /* Disable flex sizing */
+      width: 100%; /* Full width */
+    }
   }
+  
+  
   
   

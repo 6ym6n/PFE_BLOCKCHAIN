@@ -8,7 +8,7 @@ const HomePage = () => {
     <div className="home-page-container">
       <div className="content-area"></div>
       <header className="site-header clearfix">
-        <Navbar/>
+        
         <nav>
           <div className="logo">
             <h1>E-Vote</h1>
