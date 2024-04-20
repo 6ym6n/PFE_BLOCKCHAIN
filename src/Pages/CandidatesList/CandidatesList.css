@@ -1,0 +1,28 @@
+/* CandidatesList.css */
+
+.candidates-table {
+  width: 100%; /* Adjust as needed */
+  border-collapse: collapse; /* Eliminates the space between the borders */
+}
+
+.candidates-table table {
+  width: 100%;
+  border: 1px solid #ccc; /* Light grey border */
+  table-layout: fixed; /* This helps with equal spacing of columns */
+}
+
+.candidates-table th,
+.candidates-table td {
+  border: 1px solid #ccc; /* Light grey border for each cell */
+  text-align: left;
+  padding: 8px; /* Adjust the padding as needed */
+  background-color: #f9f9f9; /* Light grey background for each cell */
+}
+
+.candidates-table th {
+  background-color: #e9ecef; /* Slightly darker grey for headers */
+  color: #333; /* Dark grey color for header text */
+  font-weight: bold;
+}
+
+/* You can add more styling as needed for hover effects, font sizes, etc. */

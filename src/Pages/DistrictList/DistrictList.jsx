@@ -5,16 +5,15 @@ import CreateDistrict from '../../components/CreateDistrict/CreateDistrict'; // 
 import VerticalNav from '../../components/VerticalNav/VerticalNav';
 const DistrictsPage = () => {
   // Dummy data for districts list
-  const districts = [
-    { id: 1, name: 'Local Districts', description: '' },
-    { id: 2, name: 'Regional Districts', description: '' },
-    // Add more district data here
-  ];
+ 
 
   return (
     <div className="admin-page-container">
       <VerticalNav /> {/* Your vertical navigation component */}
       <div className="main-content">
+        <div className='center'>
+
+        
         <header className="page-header">Districts</header>
         <div className="district-panels">
       <div className="local-districts-panel district-panel">
@@ -24,7 +23,7 @@ const DistrictsPage = () => {
       <div className="regional-districts-panel district-panel">
         <h2>Regional Districts</h2>
         {/* Regional districts will be listed here */}
-      </div>
+      </div></div>
     </div>
         <div className="create-district-container">
           <CreateDistrict /> {/* Your existing Create District component */}
